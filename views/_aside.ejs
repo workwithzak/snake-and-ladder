@@ -1,0 +1,46 @@
+<div class="aside">
+  <img src="/images/logo.png" class="logo" width="230">
+  <div id="liveDash" class="live-dash">
+    <div class="ld-title">No: of Online USERS & Active GAMES</div>
+    <div class="ld-static">
+      <div class="ld-st-icon-user">
+        <img src="/images/icon-users.png" height="25">
+      </div>
+      <div class="ld-st-nb-users">
+        <p id="nbUsers"></p>
+      </div>
+      <div class="ld-st-icon-game">
+        <img src="/images/icon-games.png" height="25">
+      </div>
+      <div class="ld-st-nb-games">
+        <p id="nbGames"></p>
+      </div>
+    </div>
+  </div>
+  <div class="leader-board">
+    <div class="leader-board-title">
+      <img src="/images/top-badge.png">
+      <p>LEADER BOARD (TOP-7)</p>
+    </div>
+    <% var tops = 1 %>
+    <% users.forEach(function(user) { %>
+      <div class="static-box animated jackInTheBox">
+        <div class="user"><%= tops++ %>: <%= user.username %></div>
+        <div class="static">
+          <div>
+            <img src="/gameassets/graphics/icon-dice-white.png" height="20">
+            <p><%= user.turns %></p>
+          </div>
+          <div>
+            <img src="/gameassets/graphics/icon-ladder-white.png" height="20">
+            <p><%= user.ups %></p>
+          </div>
+          <div>
+            <img src="/gameassets/graphics/icon-snake-white.png" height="20">
+            <p><%= user.downs %></p>
+          </div>
+        </div>
+      </div>
+    <% }); %>
+  </div>
+</div>

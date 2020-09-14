@@ -1,0 +1,56 @@
+<% include _header %>
+
+<% if (isGame) { %>
+  <div id="board" data-token="<%= token %>" data-side="<%= side %>"></div>
+  <div id="user" data-user="<%= user %>"></div>
+<% } %>
+
+<div class="container">
+  <% include _aside %>
+  <div class="game-container">
+    <canvas id="gameCanvas" width="850" height="614" class="canvas">
+      Your browser doesn't support canvas!
+    </canvas>
+    <div id="splashScreen" class="splash-screen">
+      <img src="/images/logo-splash-screen.png">
+    </div>
+    <div id="loadingScreen" class="loading-screen">
+      <div class="progress-bar">
+        <div id="progress" class="progress"></div>
+      </div>
+      <p class="progress-txt">downloading game</p>
+    </div>
+
+    <div class="modal  modal-w" id="gameUrlPopup">
+      <div class="modal-content animated jello">
+        <div class="modal-header">
+          <img src="/images/icon-gamelink.png" class="modal-header-icon-left"/>
+          <h2 class="modal-title" id="modalTitle">Game URL</h2>
+        </div>
+        <div class="modal-body">
+          <p>To invite a friend, give the following URL:</p>
+          <p>The game will be started once your friend join the game.</p>
+          <div class="link-box">
+            <input type="text" id="gameUrl" readonly/>
+            <button id="copy" class="btn-copy">Copy</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="gameResultPopup">
+      <div class="modal-content animated jello">
+        <div class="modal-header">
+          <img src="" class="modal-header-icon-left" id="noticon"/>
+          <p class="modal-title">Game Over!</p>
+        </div>
+        <div class="modal-body-gs">
+          <p id="gameResult" class="game-result"></p>
+          <a href="/" class="btn-modal"><img src="/images/home.png" height="30"/></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% include _footer %>

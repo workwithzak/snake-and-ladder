@@ -1,0 +1,25 @@
+{
+  "name": "mfyp",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.16.1",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.5",
+    "debug": "~2.6.0",
+    "ejs": "~2.5.5",
+    "expres-session": "^1.15.2",
+    "express": "^4.14.1",
+    "express-session": "^1.17.1",
+    "express-validator": "^6.6.0",
+    "mongoose": "^5.9.25",
+    "mongose": "^1.0.2",
+    "morgan": "^1.7.0",
+    "serve-favicon": "^2.3.2",
+    "socketio": "^1.0.0"
+  }
+}

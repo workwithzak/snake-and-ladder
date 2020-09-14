@@ -1,0 +1,30 @@
+<% include _header %>
+
+<div class="container">
+  <% include _aside %>
+  <div class="game-container">
+    <div class="play-screen">
+      <form action="/play" method="post">
+        <input type="radio" name="side" value="white" style="display:none;" checked>
+        <input type="radio" name="side" value="black" style="display:none;">
+        <div class="inpbox animated tada">
+          <input type="text" name="nickname" placeholder="Enter your nickname..."
+            pattern="^[a-zA-Z0-9]{4,12}$" required class="animated fadeIn">
+          <label class="rdbtn-container">Create Game
+            <input type="radio" name="createOrJoin" id="createGame" value="create" checked>
+            <span class="checkmark"></span>
+          </label>
+          <label class="rdbtn-container">Join Game
+            <input type="radio" name="createOrJoin" id="joinGame" value="join" data-for="gameurl">
+            <span class="checkmark"></span>
+          </label>
+          <input type="text" name="gameurl" id="gameUrl" placeholder="Game URL for Joining Room" 
+          pattern="\/([a-zA-Z0-9]){20}\/(black|white)" disabled required  class="animated fadeIn">
+        </div>
+        <button type="submit" class="play-button animated rubberBand"></button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<% include _footer %>
